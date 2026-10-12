@@ -1,0 +1,30 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="left" x1="280" y1="250" x2="520" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5267D9"/>
+      <stop offset="1" stop-color="#263A9E"/>
+    </linearGradient>
+    <linearGradient id="right" x1="520" y1="260" x2="760" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B0B7FF"/>
+      <stop offset="1" stop-color="#7D82E8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="220" fill="#F8F9FD"/>
+
+  <!-- Left folded page -->
+  <path d="M292 275C292 245 322 225 350 238L505 315C525 325 540 345 540 368V700C540 728 510 746 485 733L330 655C307 643 292 620 292 594V275Z"
+        fill="url(#left)"/>
+
+  <!-- Center fold -->
+  <path d="M505 315L620 450L505 733V368C505 347 505 330 505 315Z"
+        fill="#3442A7"/>
+
+  <!-- Right folded page -->
+  <path d="M620 450L620 355C620 330 635 310 657 298L760 240C790 223 820 244 820 278V600C820 626 805 650 782 663L650 735C630 746 620 728 620 700V450Z"
+        fill="url(#right)"/>
+
+  <!-- Minimal document lines -->
+  <rect x="665" y="405" width="125" height="22" rx="11" transform="rotate(-18 665 405)" fill="#F8F9FD"/>
+  <rect x="650" y="475" width="110" height="22" rx="11" transform="rotate(-18 650 475)" fill="#F8F9FD"/>
+</svg>

@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f6f7f9;
+  --color-card: #ffffff;
+  --color-ink: #14171f;
+  --color-ink-soft: #6b7180;
+  --color-ink-faint: #9ca1ad;
+  --color-border: #e7e9ee;
+  --color-brand: #2f5cf3;
+
+  --color-lost: #e98a1e;
+  --color-market: #17a673;
+  --color-doubt: #7c5cf0;
+  --color-referral: #2f80f0;
+  --color-event: #e23f8e;
+
+  --color-lost-tint: color-mix(in srgb, #e98a1e 12%, white);
+  --color-market-tint: color-mix(in srgb, #17a673 12%, white);
+  --color-doubt-tint: color-mix(in srgb, #7c5cf0 12%, white);
+  --color-referral-tint: color-mix(in srgb, #2f80f0 12%, white);
+  --color-event-tint: color-mix(in srgb, #e23f8e 12%, white);
+
+  --shadow-card:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 20px rgba(0, 0, 0, 0.05);
+  --shadow-modal: 0 12px 32px rgba(20, 23, 31, 0.12);
+  --shadow-sheet: 0 -8px 32px rgba(20, 23, 31, 0.18);
+  --shadow-fab:
+    0 8px 24px rgba(47, 92, 243, 0.35),
+    0 2px 6px rgba(20, 23, 31, 0.08);
+
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+  --font-editorial: "Source Serif 4", Georgia, serif;
+  --font-round: "Nunito", system-ui, sans-serif;
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-modal {
+  box-shadow: var(--shadow-modal);
+}
+
+@utility shadow-sheet {
+  box-shadow: var(--shadow-sheet);
+}
+
+@utility shadow-fab {
+  box-shadow: var(--shadow-fab);
+}
+
+/* Liquid glass — specular translucent surfaces (replaces flat frosted glass).
+   Usage: `liquid-glass` on floating chrome (sidebar, top bar, bottom nav,
+   sticky filter rows). Translucency comes from color-mix so light/dark/custom
+   themes keep working; saturation+brightness give the refractive feel. */
+@utility liquid-glass {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-card) 58%, transparent),
+    color-mix(in srgb, var(--color-card) 38%, transparent)
+  );
+  backdrop-filter: blur(28px) saturate(1.8) brightness(1.06);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8) brightness(1.06);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(20, 23, 31, 0.12);
+}
+
+/* Denser variant for full-height side panels — keeps text legible while
+   still refracting the canvas behind. */
+@utility liquid-glass-panel {
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--color-card) 78%, transparent),
+    color-mix(in srgb, var(--color-card) 62%, transparent)
+  );
+  backdrop-filter: blur(32px) saturate(1.8) brightness(1.04);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8) brightness(1.04);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 1px 0 1px rgba(255, 255, 255, 0.12),
+    8px 0 32px rgba(20, 23, 31, 0.1);
+}
+
+.dark {
+  --color-canvas: #0f1115;
+  --color-card: #171a21;
+  --color-ink: #eef0f4;
+  --color-ink-soft: #a7adba;
+  --color-ink-faint: #6b7180;
+  --color-border: #262b36;
+
+  --color-lost-tint: color-mix(in srgb, #e98a1e 18%, black);
+  --color-market-tint: color-mix(in srgb, #17a673 18%, black);
+  --color-doubt-tint: color-mix(in srgb, #7c5cf0 20%, black);
+  --color-referral-tint: color-mix(in srgb, #2f80f0 20%, black);
+  --color-event-tint: color-mix(in srgb, #e23f8e 20%, black);
+}
+
+.dark .liquid-glass,
+.dark .liquid-glass-panel {
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.04),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Standalone custom theme — defaults match light; runtime inline vars
+   (from the user's saved custom theme) override these. */
+.custom {
+  --color-canvas: #f6f7f9;
+  --color-card: #ffffff;
+  --color-ink: #14171f;
+  --color-ink-soft: #6b7180;
+  --color-ink-faint: #9ca1ad;
+  --color-border: #e7e9ee;
+  --color-brand: #2f5cf3;
+
+  --color-lost-tint: color-mix(in srgb, #e98a1e 12%, white);
+  --color-market-tint: color-mix(in srgb, #17a673 12%, white);
+  --color-doubt-tint: color-mix(in srgb, #7c5cf0 12%, white);
+  --color-referral-tint: color-mix(in srgb, #2f80f0 12%, white);
+  --color-event-tint: color-mix(in srgb, #e23f8e 12%, white);
+}
+
+/* Hero campus art is light-mode only — dark/custom get the gradient wash. */
+.dark .hero-art,
+.custom .hero-art,
+html[data-wallpaper="on"] .hero-art {
+  display: none;
+}
+
+/* Liquid-glass wallpaper mode — thinner card wash so the photo refracts
+   through; chrome already uses liquid-glass utilities above. */
+html[data-wallpaper="on"] .bg-card {
+  background-color: color-mix(in srgb, var(--color-card) 62%, transparent);
+  backdrop-filter: blur(24px) saturate(1.7) brightness(1.05);
+  -webkit-backdrop-filter: blur(24px) saturate(1.7) brightness(1.05);
+}
+html[data-wallpaper="on"] .shadow-card {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
