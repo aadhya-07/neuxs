@@ -225,7 +225,6 @@ VAPID_SUBJECT=mailto:admin@college.ac.in
 NEXT_PUBLIC_ALLOWED_DOMAINS=
 ```
 
-> 🔐 `.env.local` is git-ignored. Only `.env.example` is committed.
 
 ### 3. Set up the database
 
